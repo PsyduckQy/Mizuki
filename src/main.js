@@ -17,27 +17,6 @@ import VueParticles from 'vue-particles'
 Vue.use(MuseUI)
 Vue.use(VueParticles)
 
-import * as fundebug from 'fundebug-javascript'
-fundebug.apikey = '3684c14fde4436f512378e7b504e870dc79c8ff4be27c6cf811165c4d4ea9681'
-
-// FunDebug
-Vue.config.errorHandler = function (err, vm, info) {
-  var componentName = (vm) => {
-    if (vm.$root === vm) return 'root'
-    var name = vm._isVue ? vm.$options.name || vm.$options._componentTag : vm.name
-    return (name ? 'component <' + name + '>' : 'anonymous component') + (vm._isVue && vm.$options.__file ? ' at ' + vm.$options.__file : '')
-  }
-  var propsData = vm.$options.propsData
-
-  fundebug.notifyError(err, {
-    metaData: {
-      componentName: componentName,
-      propsData: propsData,
-      info: info
-    }
-  })
-}
-
 /**
  * 消除物理点击和 click 移动浏览器上的事件触发之间的300毫秒延迟
  */

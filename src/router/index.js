@@ -1,6 +1,6 @@
 import Vue from 'vue'
 import Router from 'vue-router'
-import Path from 'path'
+// import Path from 'path'
 
 const views = () => import('@/pages/views')
 const index = () => import('@/pages/index')
@@ -19,8 +19,8 @@ Vue.use(Router)
  * @param {Bollen} navBar 是否显示底部 TAB
  */
 export default new Router({
-  base: Path.join(__dirname),
-  mode: 'history', // 去除路由上面的##号
+  // base: Path.join(__dirname),
+  // mode: 'history', // 去除路由上面的##号
   routes: [
     {
       path: '/',

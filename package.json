@@ -20,8 +20,9 @@
     "vue-carousel-3d": "^0.1.18",
     "vue-infinite-loading": "^2.2.1",
     "vue-router": "^2.7.0",
-    "yarn": "^1.1.0",
-    "vue-waterfall": "^1.0.6"
+    "vue-star": "0.0.4",
+    "vue-waterfall": "^1.0.6",
+    "yarn": "^1.1.0"
   },
   "devDependencies": {
     "autoprefixer": "^7.1.2",

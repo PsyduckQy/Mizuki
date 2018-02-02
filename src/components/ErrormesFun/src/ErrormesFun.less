@@ -1,0 +1,27 @@
+@import '../../../_less/base/fn';
+
+
+.fades-enter-active, .fades-leave-active {
+  transition: opacity .5s
+}
+.fades-enter, .fades-leave-active {
+  opacity: 0
+}
+/*提示弹框*/
+.Errormes {
+  position: fixed;
+  top: 40%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+  padding: 15px;
+  background: rgba(0, 0, 0, .8);
+  border-radius: 8px;
+  color: #fff;
+  font-size: 18px;
+  z-index: 999999;
+  max-width: 80%;
+  height: auto;
+  line-height: 30px;
+  text-align: center;
+}

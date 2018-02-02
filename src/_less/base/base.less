@@ -1,0 +1,48 @@
+
+/**
+ * 输入控件的`placeholder`颜色设置为`#999`（浅灰色）
+ */
+
+input::-webkit-input-placeholder,
+textarea::-webkit-input-placeholder {
+    color: #999;
+}
+
+input:-moz-placeholder,
+textarea:-moz-placeholder {
+    color: #999;
+}
+
+input::-moz-placeholder,
+textarea::-moz-placeholder {
+    color: #999;
+}
+
+input:-ms-input-placeholder,
+textarea:-ms-input-placeholder {
+    color: #999;
+}
+
+/**
+ * 左右浮动元素
+ */
+.z {
+	float: left;
+}
+.y {
+	float: right;
+}
+
+/**
+ * 避免因子元素浮动而导致父元素高度缺失
+ */
+.clear:after {
+	content: "";
+	display: block;
+	height: 0;
+	clear: both;
+	visibility: hidden;
+}
+.clear {
+	zoom: 1;
+}

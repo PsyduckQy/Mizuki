@@ -1,0 +1,60 @@
+@import '../../../_less/base/fn';
+.btn {
+	width: 100%;
+	display: block;
+	box-sizing: border-box;
+	padding: 0 6%;
+}
+.lang-btn {
+	height: 40px;
+	display: block;
+	width: 100%;
+	text-align: center;
+	border: 0;
+	white-space: nowrap;
+	position: relative;
+	text-overflow:ellipsis;
+	font-size: 16px;
+	border-radius: 100px;
+	cursor: pointer;
+	text-decoration: none;
+	line-height: 40px;
+	color: @langTextColorWhite;
+
+	&.lang-btn__default {
+		background: @langButtonColorDefault;
+		box-shadow: 10px 10px 5px rgba(244, 64, 64, .10);
+
+		&:active {
+			background: @langButtonColorDefault;
+		}
+	}
+
+	&.lang-btn__primary {
+		background: @langButtonColorPrimary;
+		box-shadow: 0 10px 5px rgba(244, 64, 64, .10);
+
+		&:active {
+			background: @langButtonColorActive;
+		}
+	}
+
+	&.lang-btn__blur {
+		background: #5e93ff;
+		box-shadow: 0 10px 5px rgba(94, 147, 255, .10);
+
+		&:active {
+			background: rgba(94, 147, 255, .9);
+		}
+	}
+
+	&.is-disabled {
+		background: @langButtonColorDefault;
+		box-shadow: 0 10px 5px rgba(244, 64, 64, .02);
+
+		&:active {
+			background: @langButtonColorDefault;
+		}
+	}
+
+}

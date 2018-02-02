@@ -1,0 +1,32 @@
+@import '../../../_less/base/fn';
+
+.lang-tab-item {
+	display: block;
+	text-align: center;
+	padding: 5px 0;
+	flex: 1;
+	text-decoration: none;
+	
+	.lang-tab-item-icon {
+		width: 24px;
+    	height: 24px;
+		display: block;
+		margin: 0 auto 3px;
+
+		img {
+			width: 100%;
+    		height: 100%;
+			display: block;
+		}
+	}
+
+	.lang-tab-item-label {
+		color: inherit;
+		font-size: 12px;
+		line-height: 1;
+	}
+
+	&.is-selected {
+    	color: #ff4040;
+	}
+}

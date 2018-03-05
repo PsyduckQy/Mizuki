@@ -10,6 +10,7 @@ const personaldata = () => import('@/pages/personaldata')
 const PhotosView = () => import('@/pages/PhotosView')
 const drop = () => import('@/pages/404')
 const cache = () => import('@/pages/cache')
+const imagelist = () => import('@/pages/imagelist')
 Vue.use(Router)
 /**
  * 路由配置
@@ -27,7 +28,8 @@ export default new Router({
       component: views,
       children: [
         { path: '/', name: 'index', meta: { title: '首页', navBar: true }, component: index },
-        { path: '/PhotosView', name: 'PhotosView', meta: { title: '图片集合', navBar: false }, component: PhotosView }
+        { path: '/PhotosView', name: 'PhotosView', meta: { title: '图片集合', navBar: false }, component: PhotosView },
+        { path: '/imagelist', name: 'imagelist', meta: { title: '图片集合', navBar: false }, component: imagelist }
       ]
     },
     {

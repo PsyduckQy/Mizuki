@@ -58,7 +58,7 @@ export const _urlReplace = uri => {
   }
 }
 
-const pageScroll = ( () => {
+const pageScroll = (() => {
   const fn = function (e) {
     e.preventDefault()
     e.stopPropagation()

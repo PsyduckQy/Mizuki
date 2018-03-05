@@ -18,6 +18,14 @@ Vue.use(MuseUI)
 Vue.use(VueParticles)
 
 /**
+ * promise 数据处理
+ * [axios 文档](https://github.com/mzabriskie/axios)
+ */
+import Axios from './usilt/ajax'
+// 把 `axios` 模块挂载到 `vue` 全局上，从而能够全局调用方法
+Vue.prototype.$http = Axios
+
+/**
  * 消除物理点击和 click 移动浏览器上的事件触发之间的300毫秒延迟
  */
 if ('addEventListener' in document) {

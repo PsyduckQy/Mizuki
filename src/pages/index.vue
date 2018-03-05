@@ -16,7 +16,7 @@
 
     <ul class="waterfall">
       <li class="waterfallList" v-for="(item, index) in list" :key="index">
-        <div class="waterfallListContent">
+        <div class="waterfallListContent" @click="gasname(item.name)">
           <div></div>
           <h3>{{item.txt}}</h3>
         </div>
@@ -48,12 +48,12 @@ import Kuroiwa from '../assets/index/258986643076516610.jpg'
 import blackRock from '../assets/index/602508444667765003.jpg'
 import Kuroiwas from '../assets/index/881522823082757276.jpg'
 import Nightmare from '../assets/index/768109278584655459.jpg'
-import scenery from '../assets/index/scenery.jpg'
 import cosMo from '../assets/index/12561152604872184.jpg'
 import GokouRuri from '../assets/index/GokouRuri.jpg'
 import TokisakiKurumi from '../assets/index/TokisakiKurumi.jpg'
 import VueStar from 'vue-star'
 import InfiniteLoading from 'vue-infinite-loading'
+import {__setItem} from '../usilt/usilt'
 export default {
   data () {
     return {
@@ -76,10 +76,6 @@ export default {
         {
           bigImages: Nightmare,
           locationImg: TokisakiKurumi
-        },
-        {
-          bigImages: scenery,
-          locationImg: GokouRuri
         },
         {
           bigImages: cosMo,
@@ -108,40 +104,41 @@ export default {
         }
       ],
       datalist: [
-        {txt: '保安亭'},
-        {txt: '背景花格'},
-        {txt: '别墅花园'},
-        {txt: '反面教材'},
-        {txt: '柜子吊顶'},
-        {txt: '户外家具'},
-        {txt: '花箱树池'},
-        {txt: '花园拱门'},
-        {txt: '假山水系'},
-        {txt: '露台花园'},
-        {txt: '门头楼阁'},
-        {txt: '木地板墙板'},
-        {txt: '木花架'},
-        {txt: '木花园'},
-        {txt: '木栏杆'},
-        {txt: '木凉亭'},
-        {txt: '木楼梯'},
-        {txt: '木石马赛克'},
-        {txt: '木屋阳光房'},
-        {txt: '木阳台'},
-        {txt: '木艺品'},
-        {txt: '欧式门头'},
-        {txt: '品牌宣传'},
-        {txt: '秋千'},
-        {txt: '色板材料'},
-        {txt: '设备宠物房'},
-        {txt: '铁铝大门'},
-        {txt: '铁铝网栏'},
-        {txt: '小桥水车'},
-        {txt: '院子木门'},
-        {txt: '桌椅板凳'}
+        {txt: '保安亭', name: 'security-booth'},
+        {txt: '背景花格', name: 'villa-garden'},
+        {txt: '别墅花园', name: 'verso-textbook'},
+        {txt: '反面教材', name: 'cabinet-furred'},
+        {txt: '柜子吊顶', name: 'outdoors-furniture'},
+        {txt: '户外家具', name: 'flower-tree'},
+        {txt: '花箱树池', name: 'garden-arches'},
+        {txt: '花园拱门', name: 'rockery-basin'},
+        {txt: '假山水系', name: 'terrace-garden'},
+        {txt: '露台花园', name: 'coba-attic'},
+        {txt: '门头楼阁', name: 'wood-floor'},
+        {txt: '木地板墙板', name: 'wood-pergola'},
+        {txt: '木花架', name: 'wood-garden'},
+        {txt: '木花园', name: 'wood-handrail'},
+        {txt: '木栏杆', name: 'security-booth'},
+        {txt: '木凉亭', name: 'security-booth'},
+        {txt: '木楼梯', name: 'security-booth'},
+        {txt: '木石马赛克', name: 'security-booth'},
+        {txt: '木屋阳光房', name: 'security-booth'},
+        {txt: '木阳台', name: 'security-booth'},
+        {txt: '木艺品', name: 'security-booth'},
+        {txt: '欧式门头', name: 'security-booth'},
+        {txt: '品牌宣传', name: 'security-booth'},
+        {txt: '秋千', name: 'security-booth'},
+        {txt: '色板材料', name: 'security-booth'},
+        {txt: '设备宠物房', name: 'security-booth'},
+        {txt: '铁铝大门', name: 'security-booth'},
+        {txt: '铁铝网栏', name: 'security-booth'},
+        {txt: '小桥水车', name: 'security-booth'},
+        {txt: '院子木门', name: 'security-booth'},
+        {txt: '桌椅板凳', name: 'security-booth'}
       ],
       nber: 0,
-      state: true
+      state: true,
+      imagelist: []
     }
   },
   components: {
@@ -165,7 +162,6 @@ export default {
           let oo = this.nber ? (this.nber * 10) : 0
           let cc = (this.nber ? (this.nber + 1) : 1) * 10
           for (let a = oo; a < cc; a++) {
-            console.log(a)
             if (this.datalist[a]) {
               temp.push(this.datalist[a])
             } else {
@@ -179,13 +175,31 @@ export default {
           $state.complete()
         }
       }, 500)
+    },
+    gasname (_name) {
+      console.log(_name)
+      this.$router.push({name: 'imagelist'})
+      __setItem('name', _name)
     }
   },
   mounted () {
     // this.$refs.Errormes.ErrormesFun('23333333333')
+//    this.imagelist = []
     setTimeout(() => {
       this.toggle._isToast = false
     }, 500)
+//    this.$http.get('/static/api.json', {})
+//      .then((res) => {
+//        for (let i in res.data) {
+//          if (i === 'villa-garden') {
+//            for (let k = 1; k <= res.data[i].num; k++) {
+//              let Url = res.data[i].imgName + i + k + '.JPG'
+//              this.imagelist.push(Url)
+//            }
+//          }
+//        }
+//        console.log(this.imagelist)
+//      }, () => {})
   }
 }
 </script>
